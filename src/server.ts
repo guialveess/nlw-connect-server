@@ -43,13 +43,6 @@ app.register(getSubscriberInvitesCountRoute)
 app.register(getSubscriberInvitesClicksRoute)
 app.register(getSubscriberRankingPositionRoute)
 
-app
-  .listen({
-    port: Number(process.env.PORT) || 3333, // Garantir que seja um número
-  })
-  .then(() => {
-    console.log('HTTP server running!')
-  })
-  .catch(err => {
-    console.error('Error starting server:', err)
-  })
+app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
+  console.log('HTTP server running')
+})
