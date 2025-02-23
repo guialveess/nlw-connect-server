@@ -26,6 +26,8 @@ export const getRankingRoute: FastifyPluginAsyncZod = async app => {
     async () => {
       const { rankingWithScores } = await getRanking()
 
+      console.log('Ranking com scores:', rankingWithScores) // Adicione um log aqui
+
       return {
         ranking: rankingWithScores,
       }
